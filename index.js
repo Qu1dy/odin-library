@@ -23,9 +23,16 @@ function displayBooks() {
         bookTitleEL.innerText = book.name;
         bookAuthorEL.innerText = book.author;
         bookPagesEL.innerText = book.pages;
+        bookEL.classList.add("card")
         bookEL.appendChild(bookTitleEL);
         bookEL.appendChild(bookAuthorEL);
         bookEL.appendChild(bookPagesEL);
         cards.appendChild(bookEL);
     });
 }
+
+addBooksToLibrary("meow", "aaa", 329);
+addBooksToLibrary("meowy", "bbb", 330);
+addBooksToLibrary("woof", "ccc", 331);
+
+displayBooks();

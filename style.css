@@ -7,9 +7,23 @@ body {
 
 .cards {
     display: grid;
+    grid-auto-flow: column;
+    justify-content: space-evenly;
     width: 40rem;
     height: 50rem;
     background-color: #219ebc;
     border: 0.25rem solid #023047;
     border-radius: 4rem;
+}
+
+.card {
+    margin-top: 1rem;
+    color: #8ecae6;
+    display: grid;
+    text-align: center;
+    width: 11rem;
+    height: 15rem;
+    border: 0.25rem solid #023047;
+    border-radius: 2rem;
+    background-color: #023047;
 }

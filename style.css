@@ -25,6 +25,7 @@ header {
     background-color: #8ecae6;
     box-shadow: 1px 1px 8px #333;
     grid-area: header;
+    z-index: 1;
 }
 
 header > *, .card > * {
@@ -33,7 +34,6 @@ header > *, .card > * {
 
 .cards-container {
     position: relative;
-    z-index: -1;
     display: grid;
     grid-template-columns: repeat(auto-fit, 16rem);
     grid-template-rows: repeat(auto-fit, min(21rem));
@@ -56,3 +56,22 @@ header > *, .card > * {
     border-radius: 2rem;
     background-color: #023047;
 }
+
+.add-book {
+    position: fixed;
+    z-index: 100;
+    bottom: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+}
+
+.add-book img {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+}
+

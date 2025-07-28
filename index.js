@@ -1,5 +1,4 @@
 const cards = document.querySelector(".cards-container");
-
 const library = [];
 
 function Book(name, author, pages, read) {
@@ -14,6 +13,7 @@ function addBooksToLibrary(name, author, pages, read) {
     const book = new Book(name, author, pages, read);
     library.push(book);
 }
+
 
 function displayBooks() {
     library.forEach(book => {

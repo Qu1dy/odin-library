@@ -1,22 +1,33 @@
 body {
+    margin: 0;
+    padding: 0;
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 9fr;
     grid-template-areas: 'header'
                          'cards';
 }
 
 header {
     display: flex;
+    align-items: center;
     background-color: #8ecae6;
+    box-shadow: 1px 1px 8px #333;
     grid-area: header;
 }
 
+header h1 {
+    margin-left: 1rem;
+}
+
+
 .cards {
+    position: relative;
+    z-index: -1;
     display: grid;
+    height: 90vh;
     grid-auto-flow: column;
     justify-content: space-evenly;
     background-color: #219ebc;
-    border: 0.25rem solid #023047;
     grid-area: cards;
 }
 

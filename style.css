@@ -2,9 +2,20 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 1fr 9fr;
+    grid-template-rows: 6rem calc(100vh - 9rem) 3rem;
     grid-template-areas: 'header'
-                         'cards';
+                         'cards'
+                         'footer';
+}
+
+footer {
+    grid-area: footer;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 header {
@@ -18,7 +29,6 @@ header {
 header > *, .card > * {
     margin-left: 1rem;
 }
-
 
 .cards {
     position: relative;

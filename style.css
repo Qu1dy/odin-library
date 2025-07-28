@@ -1,5 +1,15 @@
-.books {
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8ecae6;
+}
+
+.cards {
     display: grid;
-    height: 80vh;
-    background-color: black;
+    width: 40rem;
+    height: 50rem;
+    background-color: #219ebc;
+    border: 0.25rem solid #023047;
+    border-radius: 4rem;
 }

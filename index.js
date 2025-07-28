@@ -1,4 +1,4 @@
-const body = document.querySelector("body");
+const cards = document.querySelector(".cards");
 
 const library = [];
 
@@ -26,6 +26,6 @@ function displayBooks() {
         bookEL.appendChild(bookTitleEL);
         bookEL.appendChild(bookAuthorEL);
         bookEL.appendChild(bookPagesEL);
-        body.appendChild(bookEL);
+        cards.appendChild(bookEL);
     });
 }

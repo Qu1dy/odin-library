@@ -2,7 +2,6 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 4rem calc(110vh - 7rem) 3rem;
     grid-template-areas: 'header'
                          'cards'
                          'footer';
@@ -16,6 +15,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 3rem;
     gap: 1rem;
 }
 
@@ -36,7 +36,7 @@ header > *, .card > * {
     z-index: -1;
     display: grid;
     grid-template-columns: repeat(auto-fit, 16rem);
-    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-rows: repeat(auto-fit, min(21rem));
     background-color: #219ebc;
     grid-area: cards;
 }

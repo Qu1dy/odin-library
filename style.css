@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-rows: 6rem calc(100vh - 9rem) 3rem;
+    grid-template-rows: 6rem calc(110vh - 9rem) 3rem;
     grid-template-areas: 'header'
                          'cards'
                          'footer';

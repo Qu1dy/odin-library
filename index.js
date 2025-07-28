@@ -34,5 +34,8 @@ function displayBooks() {
 addBooksToLibrary("meow", "aaa", 329);
 addBooksToLibrary("meowy", "bbb", 330);
 addBooksToLibrary("woof", "ccc", 331);
+addBooksToLibrary("meow", "aaa", 329);
+addBooksToLibrary("meowy", "bbb", 330);
+addBooksToLibrary("woof", "ccc", 331);
 
 displayBooks();

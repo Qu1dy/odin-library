@@ -23,9 +23,9 @@ header > *, .card > * {
 .cards {
     position: relative;
     z-index: -1;
-    display: flex;
-    height: 90vh;
-    grid-auto-flow: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 16rem);
+    grid-template-rows: repeat(auto-fit, 1fr);
     background-color: #219ebc;
     grid-area: cards;
 }
@@ -35,12 +35,11 @@ header > *, .card > * {
 }
 
 .card {
-    margin-left: 1rem;
-    margin-top: 1rem;
+    margin: 1rem 0.5rem 0;
     color: #8ecae6;
     display: grid;
     grid-template-rows: 3rem 2rem 2rem;
-    width: 15rem;
+    width: 14rem;
     height: 20rem;
     border: 0.25rem solid #023047;
     border-radius: 2rem;

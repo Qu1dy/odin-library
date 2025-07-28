@@ -1,19 +1,23 @@
 body {
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    grid-template-areas: 'header'
+                         'cards';
+}
+
+header {
     display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: #8ecae6;
+    grid-area: header;
 }
 
 .cards {
     display: grid;
     grid-auto-flow: column;
     justify-content: space-evenly;
-    width: 40rem;
-    height: 50rem;
     background-color: #219ebc;
     border: 0.25rem solid #023047;
-    border-radius: 4rem;
+    grid-area: cards;
 }
 
 .card {

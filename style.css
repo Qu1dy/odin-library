@@ -23,15 +23,15 @@ header h1 {
 .cards {
     position: relative;
     z-index: -1;
-    display: grid;
+    display: flex;
     height: 90vh;
     grid-auto-flow: column;
-    justify-content: space-evenly;
     background-color: #219ebc;
     grid-area: cards;
 }
 
 .card {
+    margin-left: 1rem;
     margin-top: 1rem;
     color: #8ecae6;
     display: grid;

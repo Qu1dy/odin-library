@@ -15,7 +15,7 @@ header {
     grid-area: header;
 }
 
-header h1 {
+header > * {
     margin-left: 1rem;
 }
 

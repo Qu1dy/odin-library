@@ -31,7 +31,7 @@ header > *, .card > * {
     margin-left: 1rem;
 }
 
-.cards {
+.cards-container {
     position: relative;
     z-index: -1;
     display: grid;

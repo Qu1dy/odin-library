@@ -1,4 +1,4 @@
-const cards = document.querySelector(".cards");
+const cards = document.querySelector(".cards-container");
 
 const library = [];
 

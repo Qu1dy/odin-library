@@ -18,11 +18,11 @@ function displayBooks() {
     library.forEach(book => {
         const bookEL = document.createElement("div");
         const bookTitleEL = document.createElement("h1"); 
-        const bookAuthorEL = document.createElement("h1");
-        const bookPagesEL = document.createElement("h1");
+        const bookAuthorEL = document.createElement("h3");
+        const bookPagesEL = document.createElement("h4");
         bookTitleEL.innerText = book.name;
-        bookAuthorEL.innerText = book.author;
-        bookPagesEL.innerText = book.pages;
+        bookAuthorEL.innerText = `By: ${book.author}`;
+        bookPagesEL.innerText = `has ${book.pages} pages.`;
         bookEL.classList.add("card")
         bookEL.appendChild(bookTitleEL);
         bookEL.appendChild(bookAuthorEL);

@@ -63,6 +63,11 @@ dialog {
     background-color: #34699A;
 }
 
+dialog p {
+    display: flex;
+    justify-content: space-between;
+}
+
 label {
     font-size: 1.2rem;
 }
@@ -70,7 +75,12 @@ label {
 input {
     background: none;
     border: none;
+    font-size: 1.2rem;
     border-bottom: 2px solid black;
+}
+
+input[type=number] {
+    width: 3rem;
 }
 
 input:focus, .add-book:focus {

@@ -60,6 +60,13 @@ dialog {
     z-index: 1;
     height: 70vh;
     border-radius: 2rem;
+    background-color: #34699A;
+}
+
+input {
+    background: none;
+    border: none;
+    border-bottom: 2px solid black;
 }
 
 .add-book {

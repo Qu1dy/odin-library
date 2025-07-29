@@ -1,5 +1,6 @@
 const cards = document.querySelector(".cards-container");
 const addBookEL = document.querySelector(".add-book")
+const dialog = document.querySelector("dialog");
 const library = [];
 
 function Book(name, author, pages, read) {
@@ -37,3 +38,5 @@ function displayBooks() {
 }
 
 displayBooks();
+
+addBookEL.addEventListener("click", () => dialog.showModal())

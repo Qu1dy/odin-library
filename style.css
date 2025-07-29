@@ -55,6 +55,12 @@ header > *, .card > * {
     background-color: #023047;
 }
 
+dialog {
+    position: absolute;
+    z-index: 1;
+    bottom: 50%;
+}
+
 .add-book {
     position: fixed;
     z-index: 100;

@@ -1,4 +1,5 @@
 const cards = document.querySelector(".cards-container");
+const addBookEL = document.querySelector(".add-book")
 const library = [];
 
 function Book(name, author, pages, read) {
@@ -34,18 +35,5 @@ function displayBooks() {
         cards.appendChild(bookEL);
     });
 }
-
-addBooksToLibrary("meow", "aaa", 329, "no");
-addBooksToLibrary("meowy", "bbb", 330, "yes");
-addBooksToLibrary("woof", "ccc", 331, "no");
-addBooksToLibrary("meow", "aaa", 329, "no");
-addBooksToLibrary("meowy", "bbb", 330, "yes");
-addBooksToLibrary("woof", "ccc", 331, "yes");
-addBooksToLibrary("meow", "aaa", 329, "no");
-addBooksToLibrary("meowy", "bbb", 330, "yes");
-addBooksToLibrary("woof", "ccc", 331, "no");
-addBooksToLibrary("meow", "aaa", 329, "no");
-addBooksToLibrary("meowy", "bbb", 330, "yes");
-addBooksToLibrary("woof", "ccc", 331, "yes");
 
 displayBooks();

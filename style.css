@@ -63,10 +63,17 @@ dialog {
     background-color: #34699A;
 }
 
+label {
+    font-size: 1.2rem;
+}
 input {
     background: none;
     border: none;
     border-bottom: 2px solid black;
+}
+
+input:focus, .add-book:focus {
+    outline: none;
 }
 
 .add-book {

@@ -58,7 +58,8 @@ header > *, .card > * {
 dialog {
     position: absolute;
     z-index: 1;
-    bottom: 50%;
+    height: 70vh;
+    border-radius: 2rem;
 }
 
 .add-book {

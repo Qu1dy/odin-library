@@ -29,6 +29,7 @@ function updateLibrary() {
         const bookAuthorEL = document.createElement("h3");
         const bookPagesEL = document.createElement("h4");
         const readEL = document.createElement("h4");
+        const buttonsDivEL = document.createElement("div");
         const removeBookEL = document.createElement("button");
         const indOfBookInLibrary = library.find(b => b.id === book.id)
         removeBookEL.addEventListener("click", () => {
@@ -37,9 +38,18 @@ function updateLibrary() {
         });
         const xMark = document.createElement("img");
         xMark.setAttribute("src", "svgs/close.svg");
-        xMark.setAttribute("title", "Remove book")
+        xMark.setAttribute("title", "Remove book");
         removeBookEL.appendChild(xMark);
-        
+
+        const changeReadStatus = document.createElement("label");
+        const readStatusCheckbox = document.createElement('input');
+        readStatusCheckbox.setAttribute("type", "checkbox");
+        const readStatusSlider = document.createElement("span");
+        changeReadStatus.appendChild(readStatusCheckbox);
+        changeReadStatus.appendChild(readStatusSlider);
+        buttonsDivEL.appendChild(changeReadStatus);
+
+        buttonsDivEL.appendChild(removeBookEL);
         bookTitleEL.innerText = book.name;
         bookAuthorEL.innerText = `By: ${book.author}`;
         bookPagesEL.innerText = `has ${book.pages} pages.`;
@@ -49,7 +59,7 @@ function updateLibrary() {
         bookEL.appendChild(bookAuthorEL);
         bookEL.appendChild(bookPagesEL);
         bookEL.appendChild(readEL);
-        bookEL.appendChild(removeBookEL);
+        bookEL.appendChild(buttonsDivEL);
         cards.appendChild(bookEL);
     });
 }

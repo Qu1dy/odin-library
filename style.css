@@ -83,7 +83,7 @@ input[type=number] {
     width: 3rem;
 }
 
-input:focus, .add-book:focus {
+input:focus, button:focus {
     outline: none;
 }
 

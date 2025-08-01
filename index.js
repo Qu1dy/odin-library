@@ -17,32 +17,41 @@ function Book(name, author, pages, read) {
 function addBooksToLibrary(name, author, pages, read) {
     const book = new Book(name, author, pages, read);
     library.push(book);
-    displayBook(book);
+    updateLibrary();
 }
 
 
-function displayBook(book) {
-    const bookEL = document.createElement("div");
-    const bookTitleEL = document.createElement("h1"); 
-    const bookAuthorEL = document.createElement("h3");
-    const bookPagesEL = document.createElement("h4");
-    const readEL = document.createElement("h4");
-    const removeBookEL = document.createElement("button");
-    const xMark = document.createElement("img");
-    xMark.setAttribute("src", "svgs/close.svg");
-    xMark.setAttribute("title", "Remove book")
-    removeBookEL.appendChild(xMark);
-    bookTitleEL.innerText = book.name;
-    bookAuthorEL.innerText = `By: ${book.author}`;
-    bookPagesEL.innerText = `has ${book.pages} pages.`;
-    readEL.innerText = `Read: ${book.read}`;
-    bookEL.classList.add("card");
-    bookEL.appendChild(bookTitleEL);
-    bookEL.appendChild(bookAuthorEL);
-    bookEL.appendChild(bookPagesEL);
-    bookEL.appendChild(readEL);
-    bookEL.appendChild(removeBookEL);
-    cards.appendChild(bookEL);
+function updateLibrary() {
+    cards.innerHTML = "";
+    library.forEach(book => {
+        const bookEL = document.createElement("div");
+        const bookTitleEL = document.createElement("h1"); 
+        const bookAuthorEL = document.createElement("h3");
+        const bookPagesEL = document.createElement("h4");
+        const readEL = document.createElement("h4");
+        const removeBookEL = document.createElement("button");
+        const indOfBookInLibrary = library.find(b => b.id === book.id)
+        removeBookEL.addEventListener("click", () => {
+            library.splice(indOfBookInLibrary, 1);
+            updateLibrary();
+        });
+        const xMark = document.createElement("img");
+        xMark.setAttribute("src", "svgs/close.svg");
+        xMark.setAttribute("title", "Remove book")
+        removeBookEL.appendChild(xMark);
+        
+        bookTitleEL.innerText = book.name;
+        bookAuthorEL.innerText = `By: ${book.author}`;
+        bookPagesEL.innerText = `has ${book.pages} pages.`;
+        readEL.innerText = `Read: ${book.read}`;
+        bookEL.classList.add("card");
+        bookEL.appendChild(bookTitleEL);
+        bookEL.appendChild(bookAuthorEL);
+        bookEL.appendChild(bookPagesEL);
+        bookEL.appendChild(readEL);
+        bookEL.appendChild(removeBookEL);
+        cards.appendChild(bookEL);
+    });
 }
 
 addBookEL.addEventListener("click", () => dialog.showModal());
@@ -59,4 +68,4 @@ submitFormButton.addEventListener("click", (e) => {
     const [bookName,author,pages] = Array.from(formElements).map(item => item.value);
     const read = formElements.item(3).checked;
     addBooksToLibrary(bookName, author, pages, read);
-})
+});

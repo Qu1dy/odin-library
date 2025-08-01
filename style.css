@@ -148,3 +148,23 @@ button[type=submit]:hover {
     z-index: 98;
     background-color: rgba(0,0,0, 0.7);
 }
+
+.card button {
+    width: 2rem;
+    height: 2rem;
+    align-self: flex-end;
+    justify-self: flex-end;
+    background: none;
+    border: none;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+.card button img {
+    width: 2rem;
+    height: 2rem;
+}
+
+.card button:hover {
+    transform: scale(1.1);
+}

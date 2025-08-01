@@ -27,6 +27,11 @@ function displayBook(book) {
     const bookAuthorEL = document.createElement("h3");
     const bookPagesEL = document.createElement("h4");
     const readEL = document.createElement("h4");
+    const removeBookEL = document.createElement("button");
+    const xMark = document.createElement("img");
+    xMark.setAttribute("src", "svgs/close.svg");
+    xMark.setAttribute("title", "Remove book")
+    removeBookEL.appendChild(xMark);
     bookTitleEL.innerText = book.name;
     bookAuthorEL.innerText = `By: ${book.author}`;
     bookPagesEL.innerText = `has ${book.pages} pages.`;
@@ -36,6 +41,7 @@ function displayBook(book) {
     bookEL.appendChild(bookAuthorEL);
     bookEL.appendChild(bookPagesEL);
     bookEL.appendChild(readEL);
+    bookEL.appendChild(removeBookEL);
     cards.appendChild(bookEL);
 }
 

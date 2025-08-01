@@ -2,6 +2,8 @@ const cards = document.querySelector(".cards-container");
 const addBookEL = document.querySelector(".add-book")
 const dialog = document.querySelector("#add-book-dia");
 const overlay = document.querySelector(".overlay");
+const addBookForm = document.querySelector("form");
+const submitFormButton = document.querySelector("button[type=submit]")
 const library = [];
 
 function Book(name, author, pages, read) {
@@ -38,13 +40,18 @@ function displayBooks() {
     });
 }
 
-displayBooks();
-
 addBookEL.addEventListener("click", () => dialog.showModal());
 
 dialog.addEventListener("toggle", (e) => {
-    console.log("a")
     if(e.newState === 'open')
         return overlay.style.display = "block";
     overlay.style.display = "none";
+})
+
+submitFormButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const formElements = addBookForm.elements;
+    const [bookName,author,pages,read] = Array.from(formElements).map(item => item.value);
+    addBooksToLibrary(bookName, author, pages, read);
+    displayBooks();
 })

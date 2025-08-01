@@ -48,6 +48,9 @@ function updateLibrary(book) {
     changeReadStatus.classList.add("switch");
     const readStatusCheckbox = document.createElement('input');
     readStatusCheckbox.setAttribute("type", "checkbox");
+    if(book.read === "✓") {
+        readStatusCheckbox.checked = true;
+    }
     readStatusCheckbox.addEventListener("change", (e) => {
         const checkbox = e.target;
         book.toggleRead(checkbox.checked);

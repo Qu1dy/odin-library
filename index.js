@@ -10,7 +10,7 @@ function Book(name, author, pages, read) {
     this.name = name;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.read = read ? "✓" : "✖";
     this.id = crypto.randomUUID();
 }
 
@@ -50,7 +50,7 @@ dialog.addEventListener("toggle", (e) => {
 submitFormButton.addEventListener("click", (e) => {
     e.preventDefault();
     const formElements = addBookForm.elements;
-    const [bookName,author,pages,read] = Array.from(formElements).map(item => item.value);
+    const [bookName,author,pages] = Array.from(formElements).map(item => item.value);
+    const read = formElements.item(3).checked;
     addBooksToLibrary(bookName, author, pages, read);
-    displayBooks();
 })

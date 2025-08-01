@@ -4,14 +4,12 @@ const dialog = document.querySelector("#add-book-dia");
 const overlay = document.querySelector(".overlay");
 const addBookForm = document.querySelector("form");
 const submitFormButton = document.querySelector("button[type=submit]")
-const library = [];
 
 function Book(name, author, pages, read) {
     this.name = name;
     this.author = author;
     this.pages = pages;
     this.read = read ? "✓" : "✖";
-    this.id = crypto.randomUUID();
 }
 
 Book.prototype.toggleRead = function(read) {
@@ -20,7 +18,6 @@ Book.prototype.toggleRead = function(read) {
 
 function addBooksToLibrary(name, author, pages, read) {
     const book = new Book(name, author, pages, read);
-    library.push(book);
     updateLibrary(book);
 }
 
@@ -45,11 +42,9 @@ function createReadStatusElement(book, bookEL) {
     return changeReadStatus;
 }
 
-function createRemoveBookElement(book, bookEL) {
+function createRemoveBookElement(bookEL) {
     const removeBookEL = document.createElement("button");
-    const indOfBookInLibrary = library.find(b => b.id === book.id)
     removeBookEL.addEventListener("click", () => {
-        library.splice(indOfBookInLibrary, 1);
         bookEL.remove();
     });
     const xMark = document.createElement("img");
@@ -69,13 +64,15 @@ function updateLibrary(book) {
     const buttonsDivEL = document.createElement("div");
     const changeReadStatus = createReadStatusElement(book, bookEL);
     buttonsDivEL.appendChild(changeReadStatus);
-    const removeBookEL = createRemoveBookElement(book, bookEL);
+    const removeBookEL = createRemoveBookElement(bookEL);
     buttonsDivEL.appendChild(removeBookEL);
+
     bookTitleEL.innerText = book.name;
     bookAuthorEL.innerText = `By: ${book.author}`;
     bookPagesEL.innerText = `has ${book.pages} pages.`;
     readEL.innerText = `Read: ${book.read}`;
     bookEL.classList.add("card");
+
     bookEL.appendChild(bookTitleEL);
     bookEL.appendChild(bookAuthorEL);
     bookEL.appendChild(bookPagesEL);

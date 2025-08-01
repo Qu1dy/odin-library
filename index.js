@@ -25,25 +25,7 @@ function addBooksToLibrary(name, author, pages, read) {
 }
 
 
-function updateLibrary(book) {
-    const bookEL = document.createElement("div");
-    const bookTitleEL = document.createElement("h1"); 
-    const bookAuthorEL = document.createElement("h3");
-    const bookPagesEL = document.createElement("h4");
-    const readEL = document.createElement("h4");
-    readEL.classList.add("read");
-    const buttonsDivEL = document.createElement("div");
-    const removeBookEL = document.createElement("button");
-    const indOfBookInLibrary = library.find(b => b.id === book.id)
-    removeBookEL.addEventListener("click", () => {
-        library.splice(indOfBookInLibrary, 1);
-        bookEL.remove();
-    });
-    const xMark = document.createElement("img");
-    xMark.setAttribute("src", "svgs/close.svg");
-    xMark.setAttribute("title", "Remove book");
-    removeBookEL.appendChild(xMark);
-
+function createReadStatusElement(book, bookEL) {
     const changeReadStatus = document.createElement("label");
     changeReadStatus.classList.add("switch");
     const readStatusCheckbox = document.createElement('input');
@@ -60,8 +42,34 @@ function updateLibrary(book) {
     readStatusSlider.classList.add("slider");
     changeReadStatus.appendChild(readStatusCheckbox);
     changeReadStatus.appendChild(readStatusSlider);
-    buttonsDivEL.appendChild(changeReadStatus);
+    return changeReadStatus;
+}
 
+function createRemoveBookElement(book, bookEL) {
+    const removeBookEL = document.createElement("button");
+    const indOfBookInLibrary = library.find(b => b.id === book.id)
+    removeBookEL.addEventListener("click", () => {
+        library.splice(indOfBookInLibrary, 1);
+        bookEL.remove();
+    });
+    const xMark = document.createElement("img");
+    xMark.setAttribute("src", "svgs/close.svg");
+    xMark.setAttribute("title", "Remove book");
+    removeBookEL.appendChild(xMark);
+    return removeBookEL;
+}
+
+function updateLibrary(book) {
+    const bookEL = document.createElement("div");
+    const bookTitleEL = document.createElement("h1"); 
+    const bookAuthorEL = document.createElement("h3");
+    const bookPagesEL = document.createElement("h4");
+    const readEL = document.createElement("h4");
+    readEL.classList.add("read");
+    const buttonsDivEL = document.createElement("div");
+    const changeReadStatus = createReadStatusElement(book, bookEL);
+    buttonsDivEL.appendChild(changeReadStatus);
+    const removeBookEL = createRemoveBookElement(book, bookEL);
     buttonsDivEL.appendChild(removeBookEL);
     bookTitleEL.innerText = book.name;
     bookAuthorEL.innerText = `By: ${book.author}`;

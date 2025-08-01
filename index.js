@@ -1,6 +1,7 @@
 const cards = document.querySelector(".cards-container");
 const addBookEL = document.querySelector(".add-book")
-const dialog = document.querySelector("dialog");
+const dialog = document.querySelector("#add-book-dia");
+const overlay = document.querySelector(".overlay");
 const library = [];
 
 function Book(name, author, pages, read) {
@@ -39,4 +40,11 @@ function displayBooks() {
 
 displayBooks();
 
-addBookEL.addEventListener("click", () => dialog.showModal())
+addBookEL.addEventListener("click", () => dialog.showModal());
+
+dialog.addEventListener("toggle", (e) => {
+    console.log("a")
+    if(e.newState === 'open')
+        return overlay.style.display = "block";
+    overlay.style.display = "none";
+})

@@ -37,7 +37,7 @@ function updateLibrary(book) {
     const indOfBookInLibrary = library.find(b => b.id === book.id)
     removeBookEL.addEventListener("click", () => {
         library.splice(indOfBookInLibrary, 1);
-        updateLibrary();
+        bookEL.remove();
     });
     const xMark = document.createElement("img");
     xMark.setAttribute("src", "svgs/close.svg");

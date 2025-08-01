@@ -42,9 +42,11 @@ function updateLibrary() {
         removeBookEL.appendChild(xMark);
 
         const changeReadStatus = document.createElement("label");
+        changeReadStatus.classList.add("switch");
         const readStatusCheckbox = document.createElement('input');
         readStatusCheckbox.setAttribute("type", "checkbox");
         const readStatusSlider = document.createElement("span");
+        readStatusSlider.classList.add("slider");
         changeReadStatus.appendChild(readStatusCheckbox);
         changeReadStatus.appendChild(readStatusSlider);
         buttonsDivEL.appendChild(changeReadStatus);

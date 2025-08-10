@@ -5,15 +5,17 @@ const overlay = document.querySelector(".overlay");
 const addBookForm = document.querySelector("form");
 const submitFormButton = document.querySelector("button[type=submit]")
 
-function Book(name, author, pages, read) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-    this.read = read ? "✓" : "✖";
-}
+class Book {
+    constructor(name, author, pages, read) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        this.read = read ? "✓" : "✖";
+    }
 
-Book.prototype.toggleRead = function(read) {
-    this.read = read ? "✓" : "✖";
+    toggleRead(read) {
+        this.read = read ? "✓" : "✖";
+    }
 }
 
 function addBooksToLibrary(name, author, pages, read) {

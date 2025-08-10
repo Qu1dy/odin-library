@@ -18,13 +18,13 @@ class Book {
     }
 }
 
-function addBooksToLibrary(name, author, pages, read) {
+const addBooksToLibrary = (name, author, pages, read) => {
     const book = new Book(name, author, pages, read);
     updateLibrary(book);
 }
 
 
-function createReadStatusElement(book, bookEL) {
+const createReadStatusElement = (book, bookEL) => {
     const changeReadStatus = document.createElement("label");
     changeReadStatus.classList.add("switch");
     const readStatusCheckbox = document.createElement('input');
@@ -44,7 +44,7 @@ function createReadStatusElement(book, bookEL) {
     return changeReadStatus;
 }
 
-function createRemoveBookElement(bookEL) {
+const createRemoveBookElement = (bookEL) => {
     const removeBookEL = document.createElement("button");
     removeBookEL.addEventListener("click", () => {
         bookEL.remove();
@@ -56,7 +56,7 @@ function createRemoveBookElement(bookEL) {
     return removeBookEL;
 }
 
-function updateLibrary(book) {
+const updateLibrary = (book) => {
     const bookEL = document.createElement("div");
     const bookTitleEL = document.createElement("h1"); 
     const bookAuthorEL = document.createElement("h3");

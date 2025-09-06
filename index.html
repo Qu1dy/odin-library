@@ -1,49 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=VT323&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <img src="svgs/library.svg" alt="" width="40" height="auto">
-        <h1>Library</h1>
+      <img src="svgs/library.svg" alt="" width="40" height="auto" />
+      <h1>Library</h1>
     </header>
     <div class="cards-container"></div>
     <button class="add-book">
-        <img src="svgs/add-book.svg" alt="add book icon">
+      <img src="svgs/add-book.svg" alt="add book icon" />
     </button>
     <div class="overlay"></div>
     <dialog id="add-book-dia">
-        <h1>Add book to library</h1>
-        <form action="" method="dialog">
-            <p>
-                <label for="book-name">Book name:</label>
-                <input type="text" id="book-name" required name="book_name">
-            </p>
-            <p>
-                <label for="author">Author: </label>
-                <input type="text" id="author" required name="author">
-            </p>
-            <p>
-                <label for="pages">Number of pages:</label>
-                <input type="number" id="pages" min="1" required name="author">
-            </p>
-            <p>
-                <label for="read">Have you read this book?</label>
-                <input type="checkbox" id="read" name="read">
-            </p>
-            <button type="submit">Add book</button>
-        </form>
+      <h1>Add book to library</h1>
+      <form action="" method="dialog">
+        <p>
+          <label for="book-name">Book name:</label>
+          <input type="text" id="book-name" required name="book_name" />
+        </p>
+        <p>
+          <label for="author">Author: </label>
+          <input type="text" id="author" required name="author" />
+        </p>
+        <p>
+          <label for="pages">Number of pages:</label>
+          <input type="number" id="pages" min="1" required name="author" />
+        </p>
+        <p>
+          <label for="read">Have you read this book?</label>
+          <input type="checkbox" id="read" name="read" />
+        </p>
+        <button type="submit">Add book</button>
+        <span class="error"></span>
+      </form>
     </dialog>
     <footer>
-        <h2>Made by Qu1dy</h2>
-        <a href="https://github.com/Qu1dy" target="_blank"><img src="svgs/github.svg" alt="github" width="30" height="auto"></a>
+      <h2>Made by Qu1dy</h2>
+      <a href="https://github.com/Qu1dy" target="_blank"
+        ><img src="svgs/github.svg" alt="github" width="30" height="auto"
+      /></a>
     </footer>
     <script src="index.js"></script>
-</body>
+  </body>
 </html>
